@@ -1,9 +1,6 @@
 ---
 - name: Setup CVAT
   hosts: all
-  vars:
-    cvat_server_docker_image: "openvino/cvat_server"
-    cvat_ui_docker_image: "openvino/cvat_ui"
   tasks:
     - name: Install docker
       apt:
