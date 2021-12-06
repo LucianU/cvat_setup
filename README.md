@@ -7,6 +7,10 @@ This project gives you a running instance of CVAT. It automates all the steps ne
   - docker-compose
   - python
   - git
+* Create a file `config.sh` from `config.sh.orig` and fill in the variables found there:
+  - `CVAT_TARGET_HOST`: the IP or host of the target machine; if the SSH port is not 22, you need to specify it like "127.0.0.1:2222"
+  - `CVAT_TARGET_USER`: a user that can ssh into the target machine
+  - `CVAT_SSH_PRIVATE_KEY`: the path to the private key
 * Now run the `setup.sh` script:
 
 	./setup.sh

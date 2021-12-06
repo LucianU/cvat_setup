@@ -1,0 +1,22 @@
+CVAT_TARGET_HOST=
+CVAT_TARGET_USER=
+CVAT_SSH_PRIVATE_KEY=
+
+# Make sure the required inputs are set
+if [ -z "$CVAT_TARGET_HOST" ]
+then
+  echo "Pleaset set CVAT_TARGET_HOST in config.sh."
+  exit 1
+fi
+
+if [ -z "$CVAT_TARGET_USER" ]
+then
+  echo "Please set CVAT_TARGET_USER in config.sh."
+  exit 1
+fi
+
+if [ -z "$CVAT_SSH_PRIVATE_KEY" ]
+then
+  echo "Please set CVAT_SSH_PRIVATE_KEY in config.sh."
+  exit 1
+fi

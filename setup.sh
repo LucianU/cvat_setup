@@ -1,15 +1,9 @@
 #!/usr/bin/env bash
 
-if [ "$#" -ne 2 ]
-then
-  echo "2 arguments required: HOST, USER"
-  echo "$# provided"
-  exit 1
-fi
+source ./config.sh
 
-PYTHON_ENV_DIR="env"
 CVAT_REPO_URL="https://github.com/openvinotoolkit/cvat"
-CLONE_TARGET_PATH="/tmp/cvat"
+CVAT_CLONE_TARGET_PATH="/tmp/cvat"
 
 if [ ! -d env ]
 then
@@ -23,14 +17,14 @@ echo "Installing Python libraries..."
 hash docker-compose 2>/dev/null || echo "Please install docker-compose."
 
 # Clone the CVAT repo
-if [ ! -d "${CLONE_TARGET_PATH}" ]
+if [ ! -d "${CVAT_CLONE_TARGET_PATH}" ]
 then
   echo "Cloning CVAT repo..."
-  git clone "${CVAT_REPO_URL}" /tmp/cvat
+  git clone "${CVAT_REPO_URL}" "${CVAT_CLONE_TARGET_PATH}"
 else
   echo "CVAT has already been cloned."
 fi
 
 # Create the Docker context for the target host
 echo "Creating Docker Context for target host..."
-docker context create cvat-host --docker host="ssh://$2@$1"
+docker context create cvat-host --docker host="ssh://$CVAT_TARGET_USER@$CVAT_TARGET_HOST"
