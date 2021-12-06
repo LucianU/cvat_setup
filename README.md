@@ -13,11 +13,11 @@ This project gives you a running instance of CVAT. It automates all the steps ne
   - `CVAT_SSH_PRIVATE_KEY`: the path to the private key
 * Now run the `setup.sh` script:
 
-	./setup.sh
+      ./setup.sh
 
 # Usage
 * Run the `run.sh` script
 * You should now have a running instance of CVAT on the host you specified.
+* Now create a superuser in CVAT. SSH into the remote machine and run:
 
-# To Do
-* Add a way to create a superuser from the machine running this script.
+      docker exec -it cvat bash -ic 'python3 ~/manage.py createsuperuser'
