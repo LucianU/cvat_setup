@@ -1,5 +1,5 @@
 # CVAT Setup
-This project gives you a running instance of CVAT. It automates all the steps needed for the setup.
+This project gives you a running instance of CVAT [Computer Vision Annotation Tool]. It automates all the steps needed for the setup.
 
 # Setup
 * In order to be able to run this project, you need to install:
